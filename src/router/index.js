@@ -2,15 +2,6 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import IndexOne from '../pages/indices/Index'
-import IndexTwo from '../pages/indices/IndexTwo.vue';
-import IndexThree from '../pages/indices/IndexThree.vue';
-import IndexFour from '../pages/indices/IndexFour.vue';
-import IndexFive from '../pages/indices/IndexFive.vue';
-import IndexSix from '../pages/indices/IndexSix.vue';
-import IndexSeven from '../pages/indices/IndexSeven.vue';
-import IndexEight from '../pages/indices/IndexEight.vue';
-import IndexNine from '../pages/indices/IndexNine.vue';
-import IndexTen from '../pages/indices/IndexTen.vue';
 import SaleInvoice from '../pages/SaleInvoice';
 import ContactUs from '../pages/ContactUs';
 import AboutUs from '../pages/AboutUs';
@@ -160,60 +151,6 @@ const routes = [
         name: 'reset',
         component: ResetPasswordPage,
         meta: { title: 'Reset Password - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/index-2',
-        name: 'index-2',
-        component: IndexTwo,
-        meta: { title: 'Home 2 - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/index-3',
-        name: 'index-3',
-        component: IndexThree,
-        meta: { title: 'Home 3 - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/index-4',
-        name: 'index-4',
-        component: IndexFour,
-        meta: { title: 'Home 4 - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/index-5',
-        name: 'index-5',
-        component: IndexFive,
-        meta: { title: 'Home 5 - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/index-6',
-        name: 'index-6',
-        component: IndexSix,
-        meta: { title: 'Home 6 - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/index-7',
-        name: 'index-7',
-        component: IndexSeven,
-        meta: { title: 'Home 7 - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/index-8',
-        name: 'index-8',
-        component: IndexEight,
-        meta: { title: 'Home 8 - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/index-9',
-        name: 'index-9',
-        component: IndexNine,
-        meta: { title: 'Home 9 - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/index-10',
-        name: 'index-10',
-        component: IndexTen,
-        meta: { title: 'Home 10 - Apdash - App Landing Page Template'}
     },
     {
         path: '/about',
