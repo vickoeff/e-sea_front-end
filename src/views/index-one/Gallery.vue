@@ -1,0 +1,77 @@
+<template>
+  <div
+    id="gallery"
+    class="ptb-100"
+  >
+    <div class="container">
+      <div class="section-heading text-center mb-5">
+        <h2>Galeri E-SEA</h2>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <carousel
+            :autoplay="true"
+            :dots="false"
+            :loop="true"
+            :items="1"
+            :margin="0"
+            :center="true"
+            :nav="true"
+            class="screen-carousel owl-theme dot-indicator"
+          >
+            <ItemGallery
+              src="../../assets/img/about-us.png"
+              alt="screenshots"
+            />
+            <ItemGallery
+              src="../../assets/img/about-us.png"
+              alt="screenshots"
+            />
+            <ItemGallery
+              src="../../assets/img/about-us.png"
+              alt="screenshots"
+            />
+          </carousel>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <ItemGallery
+                src="../../assets/img/about-us.png"
+                alt="screenshots"
+              />
+            </div>
+            <div class="col-12 col-sm-6">
+              <ItemGallery
+                src="../../assets/img/about-us.png"
+                alt="screenshots"
+              />
+            </div>
+            <div class="col-12 col-sm-6">
+              <ItemGallery
+                src="../../assets/img/about-us.png"
+                alt="screenshots"
+              />
+            </div>
+            <div class="col-12 col-sm-6">
+              <ItemGallery
+                src="../../assets/img/about-us.png"
+                alt="screenshots"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import carousel from 'vue-owl-carousel'
+import ItemGallery from '../../components/ItemGallery.vue'
+
+export default {
+  name: 'Gallery',
+  components: { carousel, ItemGallery }
+}
+</script>

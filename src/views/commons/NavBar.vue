@@ -16,6 +16,7 @@
           <img
             src="../../assets/img/logo.png"
             alt="logo"
+            width="104px"
             class="img-fluid"
           />
         </a>
@@ -32,269 +33,64 @@
           class="collapse navbar-collapse h-auto"
           :class="{ show: !collapsed }"
         >
-          <ul class="navbar-nav ml-auto menu">
+          <ul class="navbar-nav ml-auto menu align-items-center">
             <li>
-              <router-link to="/">Home</router-link>
+              <router-link to="/">Beranda</router-link>
             </li>
             <li>
               <router-link
                 v-scroll-to="'#about'"
                 to="#about"
               >
-                About
+                Tentang
               </router-link>
             </li>
             <li>
               <router-link
-                v-scroll-to="'#features'"
-                to="#features"
+                v-scroll-to="'#perizinan'"
+                to="#perizinan"
               >
-                Features
-              </router-link>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="dropdown-toggle"
-              >
-                Pages
-              </a>
-              <ul class="sub-menu">
-                <li>
-                  <a
-                    href="#"
-                    class="dropdown-toggle-inner"
-                  >
-                    Login & Sign Up
-                  </a>
-                  <ul class="sub-menu">
-                    <li>
-                      <router-link
-                        v-scroll-to="'#login'"
-                        to="login"
-                      >
-                        Login Page
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link
-                        v-scroll-to="'#sign-up'"
-                        to="sign-up"
-                      >
-                        Signup Page
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link
-                        v-scroll-to="'#reset'"
-                        to="reset"
-                      >
-                        Reset Password
-                      </router-link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="dropdown-toggle-inner"
-                  >
-                    Utilities
-                  </a>
-                  <ul class="sub-menu">
-                    <li>
-                      <router-link
-                        v-scroll-to="'#faq'"
-                        to="faq"
-                      >
-                        FAQ Page
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link
-                        v-scroll-to="'#404'"
-                        to="404"
-                      >
-                        404 Page
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link
-                        v-scroll-to="'#coming-soon'"
-                        to="coming-soon"
-                      >
-                        Coming Soon
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link
-                        v-scroll-to="'#thank-you'"
-                        to="thank-you"
-                      >
-                        Thank You
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link
-                        v-scroll-to="'#download'"
-                        to="download"
-                      >
-                        Download Page
-                        <span class="badge accent-bg text-white">New</span>
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link
-                        v-scroll-to="'#review'"
-                        to="review"
-                      >
-                        Review Page
-                        <span class="badge accent-bg text-white">New</span>
-                      </router-link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="dropdown-toggle-inner"
-                  >
-                    Team
-                  </a>
-                  <ul class="sub-menu">
-                    <li>
-                      <router-link
-                        v-scroll-to="'#team'"
-                        to="team"
-                      >
-                        Our Team Members
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link
-                        v-scroll-to="'#profile'"
-                        to="profile"
-                      >
-                        Team Member Profile
-                      </router-link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="dropdown-toggle-inner"
-                  >
-                    Our Blog
-                  </a>
-                  <ul class="sub-menu">
-                    <li>
-                      <router-link
-                        v-scroll-to="'#blog-grid'"
-                        to="blog-grid"
-                      >
-                        Blog Grid
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link
-                        v-scroll-to="'#blog-large'"
-                        to="blog-large"
-                      >
-                        Blog No Sidebar
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link
-                        v-scroll-to="'#blog-left-sidebar'"
-                        to="blog-left-sidebar"
-                      >
-                        Blog Left Sidebar
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link
-                        v-scroll-to="'#blog-right-sidebar'"
-                        to="blog-right-sidebar"
-                      >
-                        Blog Right Sidebar
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link
-                        v-scroll-to="'#blog-details-left-sidebar'"
-                        to="blog-details-left-sidebar"
-                      >
-                        Blog Detail Left Sidebar
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link
-                        v-scroll-to="'#blog-details-right-sidebar'"
-                        to="blog-details-right-sidebar"
-                      >
-                        Blog Detail Right Sidebar
-                      </router-link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <router-link
-                    v-scroll-to="'#about-us'"
-                    to="about-us"
-                  >
-                    About Us
-                  </router-link>
-                </li>
-                <li>
-                  <router-link
-                    v-scroll-to="'#contact-us'"
-                    to="contact-us"
-                  >
-                    Contact Us
-                  </router-link>
-                </li>
-                <li>
-                  <router-link
-                    v-scroll-to="'#invoice'"
-                    to="invoice"
-                  >
-                    Sale Invoice
-                    <span class="badge badge-danger">New</span>
-                  </router-link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <router-link
-                v-scroll-to="'#screenshots'"
-                to="#screenshots"
-              >
-                Screenshots
+                Perizinan
               </router-link>
             </li>
             <li>
               <router-link
-                v-scroll-to="'#process'"
-                to="#process"
+                v-scroll-to="'#faq'"
+                to="faq"
               >
-                Process
+                Pelaporan
               </router-link>
             </li>
             <li>
               <router-link
-                v-scroll-to="'#pricing'"
-                to="#pricing"
+                v-scroll-to="'#faq'"
+                to="faq"
               >
-                Pricing
+                Pengumuman
               </router-link>
             </li>
             <li>
               <router-link
-                v-scroll-to="'#contact'"
-                to="#contact"
+                v-scroll-to="'#gallery'"
+                to="#gallery"
               >
-                Contact
+                Galeri
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                v-scroll-to="'#faq'"
+                to="faq"
+              >
+                FAQ
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                v-scroll-to="'#faq'"
+                to="faq"
+              >
+                <button class="btn btn-brand-03">Login</button>
               </router-link>
             </li>
           </ul>
