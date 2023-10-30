@@ -1,5 +1,5 @@
 <template>
-  <div
+  <section
     id="gallery"
     class="ptb-100"
   >
@@ -17,6 +17,10 @@
             :margin="0"
             :center="true"
             :nav="true"
+            :nav-text="[
+              `<i class='fa fa-angle-left'></i>`,
+              `<i class='fa fa-angle-right'></i>`
+            ]"
             class="screen-carousel owl-theme dot-indicator"
           >
             <ItemGallery
@@ -63,7 +67,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -75,3 +79,9 @@ export default {
   components: { carousel, ItemGallery }
 }
 </script>
+
+<style scoped>
+section {
+  background-color: #f2f7fa;
+}
+</style>
