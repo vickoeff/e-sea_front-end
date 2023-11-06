@@ -8,6 +8,15 @@
       <div
         class="row align-items-center justify-content-between justify-content-sm-center justify-content-md-center"
       >
+        <div class="col-sm-5 col-md-6 col-lg-6 mb-5 mb-md-5 mb-sm-5 mb-lg-0">
+          <div class="download-img">
+            <img
+              src="../../assets/img/logo.png"
+              alt="download"
+              class="img-fluid"
+            />
+          </div>
+        </div>
         <div class="col-md-12 col-lg-6">
           <div class="feature-contents">
             <h2>Tentang E-SEA</h2>
@@ -28,7 +37,7 @@
               </li>
             </ul> -->
 
-            <div class="action-btns mt-4">
+            <!-- <div class="action-btns mt-4">
               <a
                 href="#"
                 class="btn btn-brand-02 mr-3"
@@ -41,16 +50,7 @@
               >
                 More About Us
               </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-5 col-md-6 col-lg-6 mb-5 mb-md-5 mb-sm-5 mb-lg-0">
-          <div class="download-img">
-            <img
-              src="../../assets/img/about-us.png"
-              alt="download"
-              class="img-fluid"
-            />
+            </div> -->
           </div>
         </div>
       </div>
