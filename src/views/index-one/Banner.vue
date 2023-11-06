@@ -12,20 +12,20 @@
       <div
         class="row align-items-center justify-content-lg-between justify-content-md-center justify-content-sm-center"
       >
-        <div class="col-md-12 col-lg-6">
-          <div class="img-wrap">
-            <img
-              src="../../assets/img/logo.png"
-              alt="app image"
-              class="hero-illust"
-            />
-          </div>
-        </div>
         <div class="col-md-6 col-sm-6 col-lg-5">
           <div class="hero-slider-content text-white py-5">
             <h1 class="text-white hero-title">
               Sistem Elektronik Perizinan KKPRL Nonberusaha
             </h1>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <div class="img-wrap">
+            <img
+              src="../../assets/img/banner-illustration.png"
+              alt="app image"
+              class="hero-illust"
+            />
           </div>
         </div>
       </div>

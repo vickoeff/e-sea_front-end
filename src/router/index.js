@@ -28,9 +28,9 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: '/',
-        name: 'IndexOne',
+        name: 'Home',
         component: IndexOne,
-        meta: { title: 'Home 1 - Apdash - App Landing Page Template'}
+        meta: { title: 'E-SEA'}
     },
     {
         path: '/invoice',

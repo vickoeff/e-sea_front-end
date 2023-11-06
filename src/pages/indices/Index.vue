@@ -10,11 +10,11 @@
       <!-- <download /> -->
       <!-- <features />
       <screenshots :is-gray="true" /> -->
-      <work-process />
+      <!-- <work-process /> -->
       <!--<counter-section />
-      <price :is-gray="true" />
+      <price :is-gray="true" />-->
       <faq />
-      <testimonial />
+      <!--<testimonial />
       <team :is-gray="true" />
       <contact />
       <blog :is-gray="true" />
@@ -34,11 +34,11 @@ import SharePhotos from '../../views/index-one/SharePhotos'
 // import Download from '../../views/index-one/Download'
 // import Features from '../../views/index-one/Features'
 // import Screenshots from '../../views/index-one/Screenshots'
-import WorkProcess from '../../views/index-one/WorkProcess'
+// import WorkProcess from '../../views/index-one/WorkProcess'
 // import CounterSection from '../../views/index-one/CounterSection'
 // import Price from '../../views/index-one/Price'
 // import Team from '../../views/commons/sections/Team'
-// import Faq from '../../views/index-one/Faq'
+import Faq from '../../views/index-one/Faq'
 // import Testimonial from '../../views/index-one/Testimonial'
 // import Contact from '../../views/index-one/Contact'
 // import Blog from '../../views/index-one/Blog'
@@ -59,10 +59,10 @@ export default {
     // Features,
     Gallery,
     // Screenshots,
-    WorkProcess,
+    // WorkProcess,
     // CounterSection,
     // Price,
-    // Faq,
+    Faq,
     // Testimonial,
     // Team,
     // Contact,

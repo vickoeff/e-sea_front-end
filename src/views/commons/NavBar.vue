@@ -14,10 +14,10 @@
           href="/"
         >
           <img
-            src="../../assets/img/logo.png"
+            src="../../assets/img/kkp-logo.png"
             alt="logo"
             width="104px"
-            class="img-fluid"
+            class="img-fluid logo"
           />
         </a>
         <button
@@ -135,3 +135,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.navbar.affix .logo {
+  transition: 0.8;
+  scale: 0.8;
+}
+</style>

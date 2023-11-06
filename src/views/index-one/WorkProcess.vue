@@ -150,7 +150,7 @@
         <div class="col-md-6 col-lg-6">
           <div class="img-wrap">
             <img
-              src="../../assets/img/app-mobile-image-3.png"
+              src="../../assets/img/faq.png"
               alt="features"
               class="img-fluid"
             />
