@@ -24,43 +24,23 @@
             class="screen-carousel owl-theme dot-indicator"
           >
             <ItemGallery
-              src="../../assets/img/about-us.png"
-              alt="screenshots"
-            />
-            <ItemGallery
-              src="../../assets/img/about-us.png"
-              alt="screenshots"
-            />
-            <ItemGallery
-              src="../../assets/img/about-us.png"
-              alt="screenshots"
+              v-for="item in data"
+              :key="item.no"
+              :src="item.image"
+              :alt="item.title"
             />
           </carousel>
         </div>
         <div class="col-12 col-md-6">
           <div class="row d-none d-sm-flex">
-            <div class="col-12 col-sm-6">
+            <div
+              v-for="item in data"
+              :key="item.no"
+              class="col-12 col-sm-6"
+            >
               <ItemGallery
-                src="../../assets/img/about-us.png"
-                alt="screenshots"
-              />
-            </div>
-            <div class="col-12 col-sm-6">
-              <ItemGallery
-                src="../../assets/img/about-us.png"
-                alt="screenshots"
-              />
-            </div>
-            <div class="col-12 col-sm-6">
-              <ItemGallery
-                src="../../assets/img/about-us.png"
-                alt="screenshots"
-              />
-            </div>
-            <div class="col-12 col-sm-6">
-              <ItemGallery
-                src="../../assets/img/about-us.png"
-                alt="screenshots"
+                :src="item.image"
+                :alt="item.title"
               />
             </div>
           </div>
@@ -76,7 +56,19 @@ import ItemGallery from '../../components/ItemGallery.vue'
 
 export default {
   name: 'Gallery',
-  components: { carousel, ItemGallery }
+  components: { carousel, ItemGallery },
+  data() {
+    return {
+      data: null
+    }
+  },
+  async mounted() {
+    const res = await this.$axios.get(`/company-profile/gallery`)
+
+    if (res.data) {
+      this.data = res.data
+    }
+  }
 }
 </script>
 

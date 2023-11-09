@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="col-md-12 col-lg-6">
-          <accordian :contents="contents" />
+          <accordian :contents="computedData" />
         </div>
       </div>
     </div>
@@ -39,17 +39,18 @@
 import Accordian from '../../components/Accordian'
 export default {
   name: 'Faq',
+  components: {
+    Accordian
+  },
   props: {
     isGray: {
       type: Boolean,
       default: false
     }
   },
-  components: {
-    Accordian
-  },
   data: function () {
     return {
+      data: [],
       contents: [
         {
           title: 'Apa itu KPRL?',
@@ -97,6 +98,28 @@ export default {
           active: false
         }
       ]
+    }
+  },
+  computed: {
+    computedData() {
+      return this.data.reduce(
+        (item, acc) => [
+          ...acc,
+          {
+            title: item.ask,
+            description: item.answer,
+            active: false
+          }
+        ],
+        []
+      )
+    }
+  },
+  async mounted() {
+    const res = await this.$axios.get(`/company-profile/faq`)
+
+    if (res.data) {
+      this.data = res.data
     }
   }
 }

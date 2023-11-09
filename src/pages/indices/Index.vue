@@ -3,9 +3,9 @@
     <nav-bar />
     <div class="main">
       <banner />
-      <share-photos />
-      <!-- <promo /> -->
       <about />
+      <!-- <promo /> -->
+      <approval />
       <gallery />
       <!-- <download /> -->
       <!-- <features />
@@ -22,6 +22,7 @@
     </div>
     <site-footer :show-subscribe="true" />
     <!-- <copyright /> -->
+    <floating-icon />
   </div>
 </template>
 
@@ -29,8 +30,8 @@
 import NavBar from '../../views/commons/NavBar'
 import Banner from '../../views/index-one/Banner'
 // import Promo from '../../views/index-one/Promo'
+import Approval from '../../views/index-one/Approval'
 import About from '../../views/index-one/About'
-import SharePhotos from '../../views/index-one/SharePhotos'
 // import Download from '../../views/index-one/Download'
 // import Features from '../../views/index-one/Features'
 // import Screenshots from '../../views/index-one/Screenshots'
@@ -46,6 +47,7 @@ import SiteFooter from '../../views/commons/SiteFooter'
 // import Copyright from '../../views/commons/Copyright'
 import Customers from '../../views/commons/sections/Customers'
 import Gallery from '../../views/index-one/Gallery'
+import FloatingIcon from '../../views/commons/FloatingIcon.vue'
 
 export default {
   name: 'IndexOne',
@@ -53,8 +55,8 @@ export default {
     NavBar,
     Banner,
     // Promo,
+    Approval,
     About,
-    SharePhotos,
     // Download,
     // Features,
     Gallery,
@@ -68,7 +70,8 @@ export default {
     // Contact,
     // Blog,
     // Customers,
-    SiteFooter
+    SiteFooter,
+    FloatingIcon
     // Copyright
   }
 }

@@ -1,69 +1,57 @@
 <template>
-  <div class="overflow-hidden">
-    <section
-      id="perizinan"
-      class="about-us ptb-100 background-shape-img position-relative"
-      v-bind:class="{ 'gray-light-bg': isGray }"
-    >
-      <div class="animated-shape-wrap">
-        <div class="animated-shape-item"></div>
-        <div class="animated-shape-item"></div>
-        <div class="animated-shape-item"></div>
-        <div class="animated-shape-item"></div>
-        <div class="animated-shape-item"></div>
-      </div>
-      <div class="container">
-        <div
-          class="row align-items-center justify-content-lg-between justify-content-md-center justify-content-sm-center"
-        >
-          <div class="col-12 mb-lg-0">
-            <div class="about-content-left">
-              <h2>Pelaksanaan Kesesuaian Kegiatan Pemanfaatan Ruang Laut</h2>
-              <p>
-                Berdasarkan Peraturan Menteri Kelautan dan Perikanan Nomor 28
-                Tahun 2021, setiap orang yang melakukan kegiatan Pemanfaatan
-                Ruang Laut di Perairan Pesisir, Wilayah perairan dan/atau
-                wilayah yurisdiksi secara menetap di sebagian Ruang Laut paling
-                singkat 30 (tiga puluh) hari wajib memiliki KKPRL. KKPRL
-                merupakan persyaratan dasar Perizinan berusaha dan/atau
-                penerbitan perizinan nonberusaha.
-              </p>
-              <p>
-                Pendaftaran KKPRL dilakukan oleh Pemohon dengan menyampaikan
-                permohonan:
-              </p>
-              <ul class="dot-circle pt-3">
-                <li>
-                  Persetujuan untuk kegiatan berusaha melalui Perizinan Berusaha
-                  terintegrasi secara elektronik atau online single submission;
-                  dan/atau
-                </li>
-                <li>
-                  Persetujuan untuk kegiatan nonberusaha atau Konfirmasi melalui
-                  sistem elektronik yang diselenggarakan oleh Kementerian dalam
-                  hal ini adalah E-SEA
-                </li>
-              </ul>
-            </div>
+  <section
+    id="about"
+    class="position-relative feature-section ptb-100"
+    v-bind:class="{ 'gray-light-bg': isGray }"
+  >
+    <div class="container">
+      <div
+        class="row align-items-center justify-content-between justify-content-sm-center justify-content-md-center"
+      >
+        <div class="col-sm-5 col-md-6 col-lg-6 mb-5 mb-md-5 mb-sm-5 mb-lg-0">
+          <div class="download-img">
+            <img
+              src="../../assets/img/logo.png"
+              alt="download"
+              class="img-fluid"
+            />
           </div>
-          <!-- <div class="col-sm-5 col-md-5 col-lg-4">
-                        <div class="about-content-right">
-                            <img src="../../assets/img/app-mobile-image-2.png" alt="about us" class="img-fluid" />
-                        </div>
-                  </div> -->
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <div class="feature-contents">
+            <editor
+              mode="viewer"
+              v-model="data.body"
+            />
+          </div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>
+import { Editor } from 'vuetify-markdown-editor'
+
 export default {
   name: 'About',
+  components: { Editor },
   props: {
     isGray: {
       type: Boolean,
       default: false
+    }
+  },
+  data() {
+    return {
+      data: null
+    }
+  },
+  async mounted() {
+    const res = await this.$axios.get(`/company-profile/about`)
+
+    if (res.data) {
+      this.data = res.data
     }
   }
 }

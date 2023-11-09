@@ -14,9 +14,13 @@ import BackToTop from 'vue-backtotop';
 import { gsap } from 'gsap';
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 
+/* Axios */
+import initAxios from './libs/axios';
+
 Vue.use(VueScrollTo);
 Vue.use(VueYoutube);
 Vue.use(BackToTop);
+Vue.prototype.$axios = initAxios;
 
 gsap.registerPlugin(CSSRulePlugin);
 

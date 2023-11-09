@@ -62,89 +62,60 @@
         </div>
         <div class="col-md-12 col-lg-8">
           <div class="row mt-0">
-            <div
-              class="col-sm-6 col-md-3 col-lg-3 mb-4 mb-sm-4 mb-md-0 mb-lg-0"
-            >
-              <h6 class="text-uppercase">Resources</h6>
-              <ul>
-                <li>
-                  <a href="#">Help</a>
-                </li>
-                <li>
-                  <a href="#">Events</a>
-                </li>
-                <li>
-                  <a href="#">Live sessions</a>
-                </li>
-                <li>
-                  <a href="#">Open source</a>
-                </li>
-                <li>
-                  <a href="#">Documentation</a>
-                </li>
-              </ul>
-            </div>
-            <div
-              class="col-sm-6 col-md-3 col-lg-3 mb-4 mb-sm-4 mb-md-0 mb-lg-0"
-            >
-              <h6 class="text-uppercase">Products</h6>
-              <ul>
-                <li>
-                  <a href="#">Pricing</a>
-                </li>
-                <li>
-                  <a href="#">Navigation</a>
-                </li>
-                <li>
-                  <a href="#">AI Studio</a>
-                </li>
-                <li>
-                  <a href="#">Page Speed</a>
-                </li>
-                <li>
-                  <a href="#">Performance</a>
-                </li>
-              </ul>
-            </div>
-            <div
-              class="col-sm-6 col-md-3 col-lg-3 mb-4 mb-sm-4 mb-md-0 mb-lg-0"
-            >
-              <h6 class="text-uppercase">Company</h6>
-              <ul>
-                <li>
-                  <a href="#">About Us</a>
-                </li>
-                <li>
-                  <a href="#">Careers</a>
-                </li>
-                <li>
-                  <a href="#">Customers</a>
-                </li>
-                <li>
-                  <a href="#">Community</a>
-                </li>
-                <li>
-                  <a href="#">Our Team</a>
-                </li>
-              </ul>
-            </div>
+            <div class="col-sm-6 col-md-9 col-lg-9"></div>
             <div class="col-sm-6 col-md-3 col-lg-3">
-              <h6 class="text-uppercase">Support</h6>
+              <h6 class="text-uppercase">Menu</h6>
               <ul>
                 <li>
-                  <a href="#">FAQ</a>
+                  <router-link to="/">Beranda</router-link>
                 </li>
                 <li>
-                  <a href="#">Sells</a>
+                  <router-link
+                    v-scroll-to="'#about'"
+                    to="#about"
+                  >
+                    Tentang
+                  </router-link>
                 </li>
                 <li>
-                  <a href="#">Contact Support</a>
+                  <router-link
+                    v-scroll-to="'#perizinan'"
+                    to="#perizinan"
+                  >
+                    Perizinan
+                  </router-link>
                 </li>
                 <li>
-                  <a href="#">Network Status</a>
+                  <router-link
+                    v-scroll-to="'#faq'"
+                    to="faq"
+                  >
+                    Pelaporan
+                  </router-link>
                 </li>
                 <li>
-                  <a href="#">Product Services</a>
+                  <router-link
+                    v-scroll-to="'#faq'"
+                    to="faq"
+                  >
+                    Pengumuman
+                  </router-link>
+                </li>
+                <li>
+                  <router-link
+                    v-scroll-to="'#gallery'"
+                    to="#gallery"
+                  >
+                    Galeri
+                  </router-link>
+                </li>
+                <li>
+                  <router-link
+                    v-scroll-to="'#faq'"
+                    to="faq"
+                  >
+                    FAQ
+                  </router-link>
                 </li>
               </ul>
             </div>
