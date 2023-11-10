@@ -2,25 +2,11 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import IndexOne from '../pages/indices/Index'
-import SaleInvoice from '../pages/SaleInvoice';
-import AboutUs from '../pages/AboutUs';
-import BlogGridPage from '../pages/blogs/BlogGridPage'
-import LargeBlogPage from '../pages/blogs/LargeBlogPage'
-import BlogLeftSideBarPage from '../pages/blogs/BlogLeftSideBarPage';
-import BlogRightSideBarPage from '../pages/blogs/BlogRightSideBarPage';
-import BlogDetailsLeftSideBarPage from '../pages/blogs/BlogDetailsLeftSideBarPage';
-import BlogDetailsRightSideBarPage from '../pages/blogs/BlogDetailsRightSideBarPage';
-import TeamsPage from '../pages/teams/TeamsPage';
-import MemberProfilePage from '../pages/teams/MemberProfilePage';
+import AnnouncementPage from '../pages/announcement/AnnouncementPage'
+import AnnouncementDetailPage from '../pages/announcement/AnnouncementDetailPage';
 import FaqPage from '../pages/utilities/FaqPage';
 import Page404 from '../pages/utilities/Page404';
-import ComingSoonPage from '../pages/utilities/ComingSoonPage';
-import ThankYouPage from '../pages/utilities/ThankYouPage';
-import DownloadPage from '../pages/utilities/DownloadPage';
-import ReviewsPage from '../pages/utilities/ReviewsPage';
-import LoginPage from '../pages/auth/LoginPage';
-import SignUpPage from '../pages/auth/SignupPage';
-import ResetPasswordPage from '../pages/auth/ResetPasswordPage';
+import GalleryPage from '../pages/GalleryPage';
 
 Vue.use(VueRouter);
 
@@ -35,85 +21,25 @@ const routes = [
         path: '/404',
         name: '404',
         component: Page404,
-        meta: { title: 'Not Found - Apdash - App Landing Page Template'}
+        meta: { title: 'Not Found - E-SEA'}
     },
     {
-        path: '/coming-soon',
-        name: 'coming-soon',
-        component: ComingSoonPage,
-        meta: { title: 'Coming Soon - Apdash - App Landing Page Template'}
+        path: '/announcement',
+        name: 'announcement',
+        component: AnnouncementPage,
+        meta: { title: 'Announcement - E-sea'}
     },
     {
-        path: '/thank-you',
-        name: 'thank-you',
-        component: ThankYouPage,
-        meta: { title: 'Thank You - Apdash - App Landing Page Template'}
+        path: '/announcement/:slug',
+        name: 'announcement-detail',
+        component: AnnouncementDetailPage,
+        meta: { title: 'Announcement - E-sea'}
     },
     {
-        path: '/download',
-        name: 'download',
-        component: DownloadPage,
-        meta: { title: 'Download - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/review',
-        name: 'review',
-        component: ReviewsPage,
-        meta: { title: 'Reviews - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/login',
-        name: 'login',
-        component: LoginPage,
-        meta: { title: 'Login - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/sign-up',
-        name: 'sign-up',
-        component: SignUpPage,
-        meta: { title: 'Sign Up - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/reset',
-        name: 'reset',
-        component: ResetPasswordPage,
-        meta: { title: 'Reset Password - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/about',
-        name: 'IndexOne#about',
-        component: IndexOne,
-        meta: { anchor: 'about'}
-    },
-    {
-        path: '/features',
-        name: 'IndexOne#features',
-        component: IndexOne,
-        meta: { anchor: 'features'}
-    },
-    {
-        path: '/screenshots',
-        name: 'IndexOne#screenshots',
-        component: IndexOne,
-        meta: { anchor: 'screenshots'}
-    },
-    {
-        path: '/process',
-        name: 'IndexOne#process',
-        component: IndexOne,
-        meta: { anchor: 'process'}
-    },
-    {
-        path: '/pricing',
-        name: 'IndexOne#pricing',
-        component: IndexOne,
-        meta: { anchor: 'pricing'}
-    },
-    {
-        path: '/contact',
-        name: 'IndexOne#contact',
-        component: IndexOne,
-        meta: { anchor: 'contact'}
+        path: '/gallery',
+        name: 'gallery',
+        component: GalleryPage,
+        meta: { title: 'Gallery - E-SEA'}
     },
 ];
 

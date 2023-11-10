@@ -7,6 +7,7 @@
       <!-- <promo /> -->
       <approval />
       <gallery />
+      <Announcement :is-gray="true" />
       <report />
       <!-- <download /> -->
       <!-- <features />
@@ -17,7 +18,6 @@
       <faq />
       <!--<testimonial />
       <team :is-gray="true" />
-      <blog :is-gray="true" />
       <customers />
     --></div>
     <site-footer :show-subscribe="true" />
@@ -42,10 +42,9 @@ import About from '../../views/index-one/About'
 import Faq from '../../views/index-one/Faq'
 // import Testimonial from '../../views/index-one/Testimonial'
 import Report from '../../views/index-one/Report'
-// import Blog from '../../views/index-one/Blog'
+import Announcement from '../../views/index-one/Announcement'
 import SiteFooter from '../../views/commons/SiteFooter'
 import Copyright from '../../views/commons/Copyright'
-import Customers from '../../views/commons/sections/Customers'
 import Gallery from '../../views/index-one/Gallery'
 import FloatingIcon from '../../views/commons/FloatingIcon.vue'
 
@@ -68,7 +67,7 @@ export default {
     // Testimonial,
     // Team,
     Report,
-    // Blog,
+    Announcement,
     // Customers,
     SiteFooter,
     FloatingIcon,
