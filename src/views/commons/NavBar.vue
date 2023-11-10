@@ -55,16 +55,16 @@
             </li>
             <li>
               <router-link
-                v-scroll-to="'#faq'"
-                to="faq"
+                v-scroll-to="'#report'"
+                to="#report"
               >
                 Pelaporan
               </router-link>
             </li>
             <li>
               <router-link
-                v-scroll-to="'#faq'"
-                to="faq"
+                v-scroll-to="'#announcement'"
+                to="#announcement"
               >
                 Pengumuman
               </router-link>
@@ -80,7 +80,7 @@
             <li>
               <router-link
                 v-scroll-to="'#faq'"
-                to="faq"
+                to="#faq"
               >
                 FAQ
               </router-link>

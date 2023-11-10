@@ -2,7 +2,7 @@
   <!--footer section start-->
   <!--when you want to remove subscribe newsletter container then you should remove .footer-with-newsletter class-->
   <footer
-    class="footer-1 gradient-bg ptb-60"
+    class="footer-1 ptb-60"
     v-bind:class="{ 'footer-with-newsletter': showSubscribe }"
   >
     <div class="container">
@@ -138,3 +138,18 @@ export default {
   }
 }
 </script>
+
+<style>
+.footer-1 {
+  background-color: #00aef0;
+  color: white;
+}
+
+.footer-1 h6 {
+  color: white;
+}
+
+.footer-1 ul > li a {
+  color: white;
+}
+</style>

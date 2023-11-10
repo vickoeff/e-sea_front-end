@@ -7,6 +7,7 @@
       <!-- <promo /> -->
       <approval />
       <gallery />
+      <report />
       <!-- <download /> -->
       <!-- <features />
       <screenshots :is-gray="true" /> -->
@@ -16,12 +17,11 @@
       <faq />
       <!--<testimonial />
       <team :is-gray="true" />
-      <contact />
       <blog :is-gray="true" />
-      <customers /> -->
-    </div>
+      <customers />
+    --></div>
     <site-footer :show-subscribe="true" />
-    <!-- <copyright /> -->
+    <copyright />
     <floating-icon />
   </div>
 </template>
@@ -41,10 +41,10 @@ import About from '../../views/index-one/About'
 // import Team from '../../views/commons/sections/Team'
 import Faq from '../../views/index-one/Faq'
 // import Testimonial from '../../views/index-one/Testimonial'
-// import Contact from '../../views/index-one/Contact'
+import Report from '../../views/index-one/Report'
 // import Blog from '../../views/index-one/Blog'
 import SiteFooter from '../../views/commons/SiteFooter'
-// import Copyright from '../../views/commons/Copyright'
+import Copyright from '../../views/commons/Copyright'
 import Customers from '../../views/commons/sections/Customers'
 import Gallery from '../../views/index-one/Gallery'
 import FloatingIcon from '../../views/commons/FloatingIcon.vue'
@@ -67,12 +67,12 @@ export default {
     Faq,
     // Testimonial,
     // Team,
-    // Contact,
+    Report,
     // Blog,
     // Customers,
     SiteFooter,
-    FloatingIcon
-    // Copyright
+    FloatingIcon,
+    Copyright
   }
 }
 </script>

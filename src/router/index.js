@@ -3,7 +3,6 @@ import VueRouter from 'vue-router';
 
 import IndexOne from '../pages/indices/Index'
 import SaleInvoice from '../pages/SaleInvoice';
-import ContactUs from '../pages/ContactUs';
 import AboutUs from '../pages/AboutUs';
 import BlogGridPage from '../pages/blogs/BlogGridPage'
 import LargeBlogPage from '../pages/blogs/LargeBlogPage'
@@ -31,78 +30,6 @@ const routes = [
         name: 'Home',
         component: IndexOne,
         meta: { title: 'E-SEA'}
-    },
-    {
-        path: '/invoice',
-        name: 'Invoice',
-        component: SaleInvoice,
-        meta: { title: 'Sales Invoice - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/contact-us',
-        name: 'Contact Us',
-        component: ContactUs,
-        meta: { title: 'Contact Us - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/about-us',
-        name: 'About Us',
-        component: AboutUs,
-        meta: { title: 'About Us - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/blog-grid',
-        name: 'Blog Grid',
-        component: BlogGridPage,
-        meta: { title: 'Blogs - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/blog-large',
-        name: 'Blog Large',
-        component: LargeBlogPage,
-        meta: { title: 'Blogs - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/blog-left-sidebar',
-        name: 'Blog Left Side Bar',
-        component: BlogLeftSideBarPage,
-        meta: { title: 'Blogs - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/blog-right-sidebar',
-        name: 'Blog Right Side Bar',
-        component: BlogRightSideBarPage,
-        meta: { title: 'Blogs - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/blog-details-left-sidebar',
-        name: 'Blog Details Left Side Bar',
-        component: BlogDetailsLeftSideBarPage,
-        meta: { title: 'Blog Details - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/blog-details-right-sidebar',
-        name: 'Blog Details Right Side Bar',
-        component: BlogDetailsRightSideBarPage,
-        meta: { title: 'Blog Details - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/team',
-        name: 'Team',
-        component: TeamsPage,
-        meta: { title: 'Team - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/profile',
-        name: 'Profile',
-        component: MemberProfilePage,
-        meta: { title: 'Profile - Apdash - App Landing Page Template'}
-    },
-    {
-        path: '/faq',
-        name: 'Faq',
-        component: FaqPage,
-        meta: { title: 'FAQ - Apdash - App Landing Page Template'}
     },
     {
         path: '/404',
