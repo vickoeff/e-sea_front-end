@@ -7,14 +7,17 @@
       <div class="section-heading text-center mb-5">
         <h2>Galeri E-SEA</h2>
       </div>
-      <div class="row">
+      <div
+        v-if="data"
+        class="row"
+      >
         <div class="col-12 col-md-6">
           <carousel
             :autoplay="true"
             :dots="false"
             :loop="true"
             :items="1"
-            :margin="0"
+            :margin="28"
             :center="true"
             :nav="true"
             :nav-text="[
@@ -26,8 +29,9 @@
             <ItemGallery
               v-for="item in data"
               :key="item.no"
-              :src="item.image"
+              :src="baseApiUrl + '/company-profile/' + item.imageUrl"
               :alt="item.title"
+              :description="item.description"
             />
           </carousel>
         </div>
@@ -39,8 +43,9 @@
               class="col-12 col-sm-6"
             >
               <ItemGallery
-                :src="item.image"
+                :src="baseApiUrl + '/company-profile/' + item.imageUrl"
                 :alt="item.title"
+                :description="item.description"
               />
             </div>
           </div>
@@ -53,13 +58,15 @@
 <script>
 import carousel from 'vue-owl-carousel'
 import ItemGallery from '../../components/ItemGallery.vue'
+import config from '../../config'
 
 export default {
   name: 'Gallery',
   components: { carousel, ItemGallery },
   data() {
     return {
-      data: null
+      data: null,
+      baseApiUrl: config.baseApiUrl
     }
   },
   async mounted() {

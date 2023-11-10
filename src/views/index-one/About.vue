@@ -20,8 +20,9 @@
         <div class="col-md-12 col-lg-6">
           <div class="feature-contents">
             <editor
+              v-if="data"
               mode="viewer"
-              v-model="data.body"
+              v-model="data"
             />
           </div>
         </div>
@@ -50,8 +51,9 @@ export default {
   async mounted() {
     const res = await this.$axios.get(`/company-profile/about`)
 
-    if (res.data) {
-      this.data = res.data
+    console.log('res', res.data[0].body)
+    if (res.data[0]) {
+      this.data = res.data[0].body
     }
   }
 }

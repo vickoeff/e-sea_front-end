@@ -9,11 +9,7 @@
         <div class="col-md-9 col-lg-8">
           <div class="section-heading text-center mb-5">
             <h2>FFAQ</h2>
-            <p>
-              Efficiently productivate reliable paradigms before ubiquitous
-              models. Continually utilize frictionless expertise whereas
-              tactical relationships. Still have questions? Contact us
-            </p>
+            <p>Kumpulan pertanyaan yang sering ditanyakan</p>
           </div>
         </div>
       </div>
@@ -28,7 +24,10 @@
           </div>
         </div>
         <div class="col-md-12 col-lg-6">
-          <accordian :contents="computedData" />
+          <accordian
+            v-if="computedData"
+            :contents="computedData"
+          />
         </div>
       </div>
     </div>
@@ -103,7 +102,7 @@ export default {
   computed: {
     computedData() {
       return this.data.reduce(
-        (item, acc) => [
+        (acc, item) => [
           ...acc,
           {
             title: item.ask,

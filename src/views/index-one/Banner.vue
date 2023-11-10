@@ -24,7 +24,7 @@
               :items="1"
               :margin="0"
               :center="true"
-              :nav="true"
+              :nav="false"
               :nav-text="[
                 `<i class='fa fa-angle-left'></i>`,
                 `<i class='fa fa-angle-right'></i>`
@@ -82,7 +82,6 @@ export default {
 
     if (res.data) {
       this.data = res.data
-      console.log('response: ', res)
     }
   },
   methods: {

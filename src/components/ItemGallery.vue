@@ -1,11 +1,16 @@
 <template>
-  <div v-on@click="onClick">
-    <img
-      :src="src"
-      :alt="alt"
-      class="img-fluid"
-    />
-    <p>{{ caption }}</p>
+  <div class="item-gallery__wrapper">
+    <div
+      class="item-gallery"
+      v-on@click="onClick"
+    >
+      <img
+        :src="src"
+        :alt="alt"
+        class="img-fluid"
+      />
+      <p>{{ description }}</p>
+    </div>
   </div>
 </template>
 
@@ -21,7 +26,7 @@ export default {
       type: String,
       default: ''
     },
-    caption: {
+    description: {
       type: String,
       default: ''
     }
@@ -33,3 +38,20 @@ export default {
   }
 }
 </script>
+
+<style>
+.item-gallery__wrapper {
+  padding: 23px;
+}
+.item-gallery {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0px 0px 23px #ceddeb;
+  cursor: pointer;
+}
+
+.item-gallery p {
+  padding: 8px;
+}
+</style>

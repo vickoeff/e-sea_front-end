@@ -19,8 +19,9 @@
           <div class="col-12 mb-lg-0">
             <div class="about-content-left">
               <editor
+                v-if="data"
                 mode="viewer"
-                v-model="data.body"
+                v-model="data"
               />
             </div>
           </div>
@@ -55,9 +56,18 @@ export default {
   async mounted() {
     const res = await this.$axios.get(`/company-profile/approval`)
 
-    if (res.data) {
-      this.data = res.data
+    if (res.data[0]) {
+      this.data = res.data[0].body
     }
   }
 }
 </script>
+
+<style>
+ol {
+  padding-left: 1rem !important;
+}
+ol > li {
+  list-style: lower-alpha;
+}
+</style>
