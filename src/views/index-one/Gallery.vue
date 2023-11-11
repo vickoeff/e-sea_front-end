@@ -31,7 +31,7 @@
             <ItemGallery
               v-for="item in data.slice(0, 8)"
               :key="item.no"
-              :src="item.imageUrl"
+              :src="baseApiUrl + '/company-profile/' + item.imageUrl"
               :alt="item.title"
               :description="item.description"
               disableClick
@@ -46,7 +46,7 @@
               class="col-12 col-sm-6"
             >
               <ItemGallery
-                :src="item.imageUrl"
+                :src="baseApiUrl + '/company-profile/' + item.imageUrl"
                 :alt="item.title"
                 :description="item.description"
               />

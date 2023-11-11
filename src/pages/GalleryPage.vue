@@ -17,7 +17,7 @@
             >
               <ItemGallery
                 :key="item.no"
-                :src="item.imageUrl"
+                :src="baseApiUrl + '/company-profile/' + item.imageUrl"
                 :alt="item.title"
                 :description="item.description"
               />
