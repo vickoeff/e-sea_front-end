@@ -1,42 +1,43 @@
 <template>
   <section
     id="announcement"
-    class="our-blog-section ptb-100"
-    :class="{ 'gray-light-bg': isGray }"
+    class="our-blog-section"
   >
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-9 col-lg-8">
-          <div class="section-heading text-center">
-            <h2>Pengumuman</h2>
-            <p>Berikut pengumuman yang sedang tersedia</p>
+    <div class="overlay-bg">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-9 col-lg-8">
+            <div class="section-heading text-center">
+              <h2 class="text-white">Pengumuman</h2>
+              <p class="text-white">Berikut pengumuman yang sedang tersedia</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row justify-content-center">
-        <div
-          v-for="item in data"
-          class="col-md-6 col-lg-4"
-          v-bind:key="item.imageUrl"
-        >
-          <small-blog-item
-            :id="item.id"
-            :image-url="item.imageUrl"
-            :day="item.day"
-            :month="item.month"
-            :title="item.title"
-            :desc="item.desc"
-          />
-        </div>
-      </div>
-      <div class="row justify-content-center mt-4">
-        <div class="col-12 text-center">
-          <router-link
-            to="announcement"
-            class="see-more"
+        <div class="row justify-content-center">
+          <div
+            v-for="item in data"
+            class="col-md-6 col-lg-4"
+            v-bind:key="item.imageUrl"
           >
-            Lihat Lebih Banyak
-          </router-link>
+            <small-blog-item
+              :id="item.id"
+              :image-url="item.imageUrl"
+              :day="item.day"
+              :month="item.month"
+              :title="item.title"
+              :desc="item.desc"
+            />
+          </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-12 text-center">
+            <router-link
+              to="announcement"
+              class="see-more"
+            >
+              Lihat Lebih Banyak
+            </router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -87,4 +88,18 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+#announcement {
+  background-image: url('../../assets/img/mercusuar.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+#announcement .container {
+  padding: 2rem 0;
+}
+.overlay-bg {
+  background-color: rgba(11, 8, 53, 0.514);
+}
+</style>

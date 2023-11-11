@@ -19,6 +19,12 @@
             width="104px"
             class="img-fluid logo"
           />
+          <img
+            src="../../assets/img/logo-white.png"
+            alt="logo"
+            width="200px"
+            class="ml-4 img-fluid logo"
+          />
         </a>
         <button
           class="navbar-toggler"
@@ -138,7 +144,7 @@ export default {
 
 <style scoped>
 .navbar.affix .logo {
-  transition: 0.8;
+  transition: 0.8s;
   scale: 0.8;
 }
 </style>

@@ -6,7 +6,7 @@
     v-bind:class="{ 'footer-with-newsletter': showSubscribe }"
   >
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-between">
         <div class="col-md-12 col-lg-4 mb-4 mb-md-4 mb-sm-4 mb-lg-0">
           <a
             href="#"
@@ -20,10 +20,10 @@
           </a>
           <br />
           <p>
-            Dynamically re-engineer high standards in functiona with alternative
-            paradigms. Conveniently monetize resource maximizing initiatives.
+            E-SEA merupakan Sistem Elektronik Kementerian yang dikelola dan
+            diselenggarakan oleh Kementerian untuk penyelenggaraan KKPRL.
           </p>
-          <div
+          <!-- <div
             class="list-inline social-list-default background-color social-hover-2 mt-2"
           >
             <li class="list-inline-item">
@@ -58,13 +58,12 @@
                 <i class="fab fa-dribbble"></i>
               </a>
             </li>
-          </div>
+          </div> -->
         </div>
-        <div class="col-md-12 col-lg-8">
+        <div class="col-md-12 col-lg-4 pt-5">
+          <h6 class="text-uppercase">Menu</h6>
           <div class="row mt-0">
-            <div class="col-sm-6 col-md-9 col-lg-9"></div>
             <div class="col-sm-6 col-md-3 col-lg-3">
-              <h6 class="text-uppercase">Menu</h6>
               <ul>
                 <li>
                   <router-link to="/">Beranda</router-link>
@@ -93,6 +92,10 @@
                     Pelaporan
                   </router-link>
                 </li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+              <ul>
                 <li>
                   <router-link
                     v-scroll-to="'#faq'"

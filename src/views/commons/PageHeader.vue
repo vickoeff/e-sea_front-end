@@ -36,6 +36,5 @@ export default {
 <style scoped lang="scss">
 .page-header-bg {
   padding-top: 148px;
-  background: url('../../assets/img/slider-bg-1.jpg');
 }
 </style>

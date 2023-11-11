@@ -24,49 +24,20 @@
           </div>
         </div>
         <div class="col-md-12 col-lg-5 mb-5 mb-md-5 mb-sm-5 mb-lg-0">
-          <div class="contact-us-form gray-light-bg rounded p-5 text-center">
+          <div
+            v-if="data"
+            class="contact-us-form gray-light-bg rounded p-5 text-center"
+          >
             <h4>Lapor</h4>
-            <form
-              v-on:submit="submit"
-              id="contactForm"
-              class="contact-us-form"
+            <p>{{ data.description }}</p>
+            <a
+              type="submit"
+              class="btn btn-brand-02"
+              id="btnContactUs"
+              :href="data.url"
             >
-              <div class="form-row">
-                <div class="col-12">
-                  <div class="form-group">
-                    <textarea
-                      type="text"
-                      class="form-control report-message"
-                      name="laporan"
-                      placeholder="Masukan pesan laporan"
-                      required="required"
-                      v-model="report"
-                    ></textarea>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="url"
-                      placeholder="Masukan Url laporan"
-                      required="required"
-                      v-model="url"
-                    />
-                  </div>
-                </div>
-                <div class="col-sm-12 mt-3">
-                  <button
-                    type="submit"
-                    class="btn btn-brand-02"
-                    id="btnContactUs"
-                  >
-                    Kirim Laporan
-                  </button>
-                </div>
-              </div>
-            </form>
+              Kirim Laporan
+            </a>
           </div>
         </div>
 
@@ -94,51 +65,18 @@ export default {
   },
   data() {
     return {
-      report: '',
-      url: '',
+      data: null,
       alertText: '',
       hasError: false,
       isSuccess: false
     }
   },
-  methods: {
-    submit: function (e) {
-      e.preventDefault()
+  async mounted() {
+    const res = await this.$axios.get(`/company-profile/report`)
 
-      let formData = new FormData()
-      formData.append('name', this.name)
-      formData.append('message', this.message)
-      formData.append('email', this.email)
-
-      fetch('/php/contact-form-process.php', {
-        body: formData,
-        method: 'POST'
-      })
-        .then((response) => {
-          if (response.status === 200) {
-            this.name = ''
-            this.message = ''
-            this.email = ''
-            this.alertText = 'Form submitted successfully'
-            this.hasError = false
-            this.isSuccess = true
-          } else {
-            this.alertText = 'Found error in the form. Please check again.'
-            this.isSuccess = false
-            this.hasError = true
-          }
-        })
-        .catch((error) => {
-          console.log(error)
-          this.alertText = 'Found error in the form. Please check again.'
-          this.isSuccess = false
-          this.hasError = true
-        })
-    },
-    mounted() {
-      this.alertText = ''
-      this.hasError = false
-      this.isSuccess = false
+    console.log('res', res.data[0].body)
+    if (res.data[0]) {
+      this.data = res.data[0].body
     }
   }
 }
