@@ -1,8 +1,5 @@
 <template>
-  <section
-    id="announcement"
-    class="our-blog-section"
-  >
+  <section id="announcement" class="our-blog-section">
     <div class="overlay-bg">
       <div class="container">
         <div class="row justify-content-center">
@@ -14,14 +11,10 @@
           </div>
         </div>
         <div class="row justify-content-center">
-          <div
-            v-for="item in data"
-            class="col-md-6 col-lg-4"
-            v-bind:key="item.imageUrl"
-          >
+          <div v-for="item in data" class="col-md-6 col-lg-4" v-bind:key="item.imageUrl">
             <small-blog-item
               :id="item.id"
-              :image-url="item.imageUrl"
+              :image-url="baseApiUrl + '/company-profile/' + item.imageUrl"
               :day="item.day"
               :month="item.month"
               :title="item.title"
@@ -31,10 +24,7 @@
         </div>
         <div class="row justify-content-center mt-4">
           <div class="col-12 text-center">
-            <router-link
-              to="announcement"
-              class="see-more"
-            >
+            <router-link to="announcement" class="see-more text-white">
               Lihat Lebih Banyak
             </router-link>
           </div>
@@ -45,52 +35,85 @@
 </template>
 
 <script>
-import SmallBlogItem from '../../components/SmallBlogItem'
+import SmallBlogItem from "../../components/SmallBlogItem";
+import config from "../../config";
 export default {
-  name: 'Announcement',
+  name: "Announcement",
   components: { SmallBlogItem },
   props: {
     isGray: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       data: [
         {
           id: 1,
-          imageUrl: 'assets/img/blog/1.jpg',
+          imageUrl: "assets/img/blog/1.jpg",
           day: 24,
-          month: 'Apr',
-          title: 'Appropriately productize fully',
-          desc: 'Some quick example text to build on the card title and make up the bulk.'
+          month: "Apr",
+          title: "Appropriately productize fully",
+          desc:
+            "Some quick example text to build on the card title and make up the bulk.",
         },
         {
           id: 2,
-          imageUrl: 'assets/img/blog/2.jpg',
+          imageUrl: "assets/img/blog/2.jpg",
           day: 24,
-          month: 'Apr',
-          title: 'Quickly formulate backend',
-          desc: 'Synergistically engage effective ROI after customer directed partnerships.'
+          month: "Apr",
+          title: "Quickly formulate backend",
+          desc:
+            "Synergistically engage effective ROI after customer directed partnerships.",
         },
         {
           id: 3,
-          imageUrl: 'assets/img/blog/3.jpg',
+          imageUrl: "assets/img/blog/3.jpg",
           day: 24,
-          month: 'Apr',
-          title: 'Objectively extend extensive',
-          desc: 'Holisticly mesh open-source leadership rather than proactive users.'
+          month: "Apr",
+          title: "Objectively extend extensive",
+          desc: "Holisticly mesh open-source leadership rather than proactive users.",
+        },
+      ],
+      baseApiUrl: config.baseApiUrl,
+    };
+  },
+  async mounted() {
+    const res = await this.$axios.get("/company-profile/announcement?page=1&perPage=3");
+    if (res.data) {
+      const normalize = res.data.data.reduce((acc, e) => {
+        const publishDate = new Date(e.publish_at);
+        const currentDate = new Date();
+        const isShow = publishDate.getTime() <= currentDate.getTime();
+        if (isShow) {
+          const year = publishDate.getFullYear();
+          const month = publishDate.toLocaleString("id-ID", { month: "short" });
+          const day = publishDate.getDate();
+          return [
+            ...acc,
+            {
+              id: e.id,
+              imageUrl: e.imageUrl,
+              day: day,
+              month: month,
+              title: e.title,
+              desc: e.description,
+              isShow,
+            },
+          ];
         }
-      ]
+        return [...acc];
+      }, []);
+      this.data = normalize;
     }
-  }
-}
+  },
+};
 </script>
 
 <style>
 #announcement {
-  background-image: url('../../assets/img/mercusuar.jpg');
+  background-image: url("../../assets/img/mercusuar.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -101,5 +124,8 @@ export default {
 }
 .overlay-bg {
   background-color: rgba(11, 8, 53, 0.514);
+}
+.see-more:hover {
+  color: rgb(70, 197, 229) !important;
 }
 </style>

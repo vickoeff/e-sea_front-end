@@ -4,11 +4,7 @@
     v-bind:class="{ 'gray-light-bg': isGray }"
   >
     <div class="blog-img position-relative">
-      <img
-        :src="imageUrl"
-        class="card-img-top"
-        alt="blog"
-      />
+      <img :src="imageUrl" class="card-img-top" alt="blog" />
       <div class="meta-date">
         <strong>{{ day }}</strong>
         <small>{{ month }}</small>
@@ -16,15 +12,12 @@
     </div>
     <div class="card-body">
       <h3 class="h5 mb-2 card-title">
-        <a href="#">{{ title }}</a>
+        {{ title }}
       </h3>
       <p class="card-text">
         {{ desc }}
       </p>
-      <a
-        :href="'/announcement/' + id"
-        class="detail-link"
-      >
+      <a :href="'/announcement/' + id" class="detail-link">
         Read more
         <span class="ti-arrow-right"></span>
       </a>
@@ -34,46 +27,46 @@
 
 <script>
 export default {
-  name: 'SmallBlogItem',
+  name: "SmallBlogItem",
   props: {
     id: {
       type: Number,
-      required: true
+      required: true,
     },
     imageUrl: {
       type: String,
-      required: true
+      required: true,
     },
     day: {
       type: Number,
-      required: true
+      required: true,
     },
     month: {
       type: String,
-      required: true
+      required: true,
     },
     comments: {
       type: Number,
-      required: true
+      required: true,
     },
     shares: {
       type: Number,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     desc: {
       type: String,
-      required: true
+      required: true,
     },
     isGray: {
       type: Boolean,
-      default: false
-    }
-  }
-}
+      default: false,
+    },
+  },
+};
 </script>
 
 <style scoped></style>
