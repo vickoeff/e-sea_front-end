@@ -28,7 +28,7 @@
             v-if="data"
             class="contact-us-form gray-light-bg rounded p-5 text-center"
           >
-            <h4>Lapor</h4>
+            <h4>{{ data.title }}</h4>
             <p>{{ data.description }}</p>
             <a
               type="submit"
@@ -74,9 +74,9 @@ export default {
   async mounted() {
     const res = await this.$axios.get(`/company-profile/report`)
 
-    console.log('res', res.data[0].body)
+    console.log('res', res.data[0])
     if (res.data[0]) {
-      this.data = res.data[0].body
+      this.data = res.data[0]
     }
   }
 }
