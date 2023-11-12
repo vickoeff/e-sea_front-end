@@ -45,14 +45,6 @@ export default {
       type: String,
       required: true,
     },
-    comments: {
-      type: Number,
-      required: true,
-    },
-    shares: {
-      type: Number,
-      required: true,
-    },
     title: {
       type: String,
       required: true,
@@ -69,4 +61,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style>
+.single-blog-card {
+  min-width: 17rem;
+}
+</style>

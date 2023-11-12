@@ -1,35 +1,15 @@
 <template>
   <div class="item-gallery__wrapper">
-    <div
-      class="item-gallery"
-      @click="onClick"
-    >
-      <img
-        :src="src"
-        :alt="alt"
-        class="img-fluid"
-      />
+    <div class="item-gallery" @click="onClick">
+      <img :src="src" :alt="alt" class="img-fluid" />
       <p class="item-gallery__caption">{{ description }}</p>
     </div>
 
-    <div
-      v-if="isShowDetail"
-      class="gallery-detail__wrapper"
-      @click="onClickOuterModal"
-    >
+    <div v-if="isShowDetail" class="gallery-detail__wrapper" @click="onClickOuterModal">
       <div class="gallery-detail__box">
-        <button
-          class="gallery-detail__close"
-          @click="isShowDetail = false"
-        >
-          x
-        </button>
+        <button class="gallery-detail__close" @click="isShowDetail = false">x</button>
         <div class="gallery-detail__image">
-          <img
-            :src="src"
-            :alt="alt"
-            class="img-fluid"
-          />
+          <img :src="src" :alt="alt" class="img-fluid" />
           <p class="gallery-detail__caption">{{ description }}</p>
         </div>
       </div>
@@ -39,42 +19,42 @@
 
 <script>
 export default {
-  name: 'ItemGallery',
+  name: "ItemGallery",
   props: {
     src: {
       type: String,
-      default: ''
+      default: "",
     },
     alt: {
       type: String,
-      default: ''
+      default: "",
     },
     description: {
       type: String,
-      default: ''
+      default: "",
     },
     disableClick: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
-    return { isShowDetail: false }
+    return { isShowDetail: false };
   },
   methods: {
     onClick() {
-      this.$emit('onClick')
+      this.$emit("onClick");
       if (!this.disableClick) {
-        this.isShowDetail = true
+        this.isShowDetail = true;
       }
     },
     onClickOuterModal(e) {
-      if (e.target._prevClass !== 'gallery-detail__wrapper') return
+      if (e.target._prevClass !== "gallery-detail__wrapper") return;
 
-      this.isShowDetail = false
-    }
-  }
-}
+      this.isShowDetail = false;
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -128,6 +108,11 @@ export default {
 
     @media screen and (max-width: 450px) {
       max-width: 90vw;
+    }
+  }
+  &__image {
+    img {
+      max-height: 70vh;
     }
   }
   &__close {
