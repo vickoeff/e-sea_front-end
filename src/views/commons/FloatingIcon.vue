@@ -4,7 +4,7 @@
       <a
         class="whatsapp"
         target="_blank"
-        href="https://wa.me/087762250001"
+        href="https://wa.me/+6287762250001"
       >
         <i class="fab fa-whatsapp"></i>
       </a>
