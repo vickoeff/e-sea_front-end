@@ -13,14 +13,20 @@
         <span class="fas fa-hand-point-up"></span>
       </div>
     </back-to-top>
+
+    <base-loading></base-loading>
   </div>
 </template>
 
 <script>
 import BackToTop from 'vue-backtotop'
+import BaseLoading from './views/commons/Loading.vue'
 
 export default {
-  components: { BackToTop }
+  components: {
+    BaseLoading,
+    BackToTop
+  }
 }
 </script>
 
