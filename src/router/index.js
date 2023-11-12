@@ -4,7 +4,6 @@ import VueRouter from 'vue-router';
 import IndexOne from '../pages/indices/Index'
 import AnnouncementPage from '../pages/announcement/AnnouncementPage'
 import AnnouncementDetailPage from '../pages/announcement/AnnouncementDetailPage';
-import FaqPage from '../pages/utilities/FaqPage';
 import Page404 from '../pages/utilities/Page404';
 import GalleryPage from '../pages/GalleryPage';
 

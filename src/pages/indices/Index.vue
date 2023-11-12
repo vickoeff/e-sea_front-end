@@ -4,22 +4,12 @@
     <div class="main">
       <banner />
       <about />
-      <!-- <promo /> -->
       <approval />
       <gallery />
       <Announcement :is-gray="true" />
       <report />
-      <!-- <download /> -->
-      <!-- <features />
-      <screenshots :is-gray="true" /> -->
-      <!-- <work-process /> -->
-      <!--<counter-section />
-      <price :is-gray="true" />-->
       <faq />
-      <!--<testimonial />
-      <team :is-gray="true" />
-      <customers />
-    --></div>
+    </div>
     <site-footer :show-subscribe="true" />
     <copyright />
     <floating-icon />
@@ -29,18 +19,9 @@
 <script>
 import NavBar from '../../views/commons/NavBar'
 import Banner from '../../views/index-one/Banner'
-// import Promo from '../../views/index-one/Promo'
 import Approval from '../../views/index-one/Approval'
 import About from '../../views/index-one/About'
-// import Download from '../../views/index-one/Download'
-// import Features from '../../views/index-one/Features'
-// import Screenshots from '../../views/index-one/Screenshots'
-// import WorkProcess from '../../views/index-one/WorkProcess'
-// import CounterSection from '../../views/index-one/CounterSection'
-// import Price from '../../views/index-one/Price'
-// import Team from '../../views/commons/sections/Team'
 import Faq from '../../views/index-one/Faq'
-// import Testimonial from '../../views/index-one/Testimonial'
 import Report from '../../views/index-one/Report'
 import Announcement from '../../views/index-one/Announcement'
 import SiteFooter from '../../views/commons/SiteFooter'
@@ -53,25 +34,23 @@ export default {
   components: {
     NavBar,
     Banner,
-    // Promo,
     Approval,
     About,
-    // Download,
-    // Features,
     Gallery,
-    // Screenshots,
-    // WorkProcess,
-    // CounterSection,
-    // Price,
     Faq,
-    // Testimonial,
-    // Team,
     Report,
     Announcement,
-    // Customers,
     SiteFooter,
     FloatingIcon,
     Copyright
   }
 }
 </script>
+
+<style lang="scss">
+.main {
+  @media screen and (max-width: 450px) {
+    padding-top: 124px;
+  }
+}
+</style>

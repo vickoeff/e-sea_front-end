@@ -63,7 +63,7 @@
         <div class="col-md-12 col-lg-4 pt-5">
           <h6 class="text-uppercase">Menu</h6>
           <div class="row mt-0">
-            <div class="col-sm-6 col-md-3 col-lg-3">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3">
               <ul>
                 <li>
                   <router-link to="/">Beranda</router-link>
@@ -94,7 +94,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-sm-6 col-md-3 col-lg-3">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3">
               <ul>
                 <li>
                   <router-link

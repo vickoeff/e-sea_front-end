@@ -6,8 +6,6 @@
   >
     <div class="hero-bottom-shape-two hero-bottom-shape-bg"></div>
 
-    <!--style="background: url('../../assets/img/hero-bottom-shape-2.svg')no-repeat bottom center"-->
-
     <div class="container">
       <div
         class="row align-items-center justify-content-lg-between justify-content-md-center justify-content-sm-center"
@@ -100,8 +98,16 @@ export default {
 }
 .hero-illust {
   max-width: 50vw;
+  @media screen and (max-width: 450px) {
+    max-width: unset;
+    max-height: 350px;
+  }
 }
 .hero-title {
   font-size: 2.7rem;
+  font-weight: bold !important;
+  @media screen and (max-width: 450px) {
+    text-align: center;
+  }
 }
 </style>

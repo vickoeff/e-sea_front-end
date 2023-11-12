@@ -36,7 +36,7 @@
               id="btnContactUs"
               :href="data.url"
             >
-              Kirim Laporan
+              Lapor
             </a>
           </div>
         </div>

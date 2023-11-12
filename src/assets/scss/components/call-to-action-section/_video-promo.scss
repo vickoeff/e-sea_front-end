@@ -64,8 +64,6 @@
 
 
 .mask-image {
-  -webkit-mask-image: url('../img/image-mask-shape.svg');
-  mask-image: url('../img/image-mask-shape.svg');
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
@@ -77,8 +75,6 @@
   transform: initial;
 }
 .shape-mask{
-  -webkit-mask-image: url('../img/image-mask-shape.svg');
-  mask-image: url('../img/image-mask-shape.svg');
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
