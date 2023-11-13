@@ -74,6 +74,7 @@ export default {
   bottom: 0;
   right: 0;
   overflow: hidden;
+  z-index: 1024;
 }
 .wrapper {
   background-color: white;
@@ -95,25 +96,28 @@ export default {
   transition: border-radius 1s;
 }
 .wrapper__list {
-  height: 0rem;
   opacity: 0;
   right: 26px;
   bottom: 5.2rem;
   position: fixed;
   overflow: hidden;
   border-radius: 5px;
+  transform: translateY(26px);
 }
+
 .wrapper__show {
-  transition: height 0.4s, opacity 0.1s, paddding 0.1s;
-  height: 10rem;
+  transition: transform 0.4s, opacity 0.1s, paddding 0.1s;
+  height: fit-content;
   opacity: 1;
   background: white;
   padding: 0 6px;
+  transform: translateY(0);
 }
 
 .social-icon {
   paddding: 10px;
 }
+
 .social-icon a {
   font-size: 30px;
 }
@@ -121,6 +125,7 @@ export default {
 .color-whatsapp {
   color: lawngreen;
 }
+
 .color-instagram {
   color: coral;
   animation: mymove 5s infinite;
