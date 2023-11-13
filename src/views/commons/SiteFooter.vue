@@ -23,26 +23,37 @@
             E-SEA merupakan Sistem Elektronik Kementerian yang dikelola dan
             diselenggarakan oleh Kementerian untuk penyelenggaraan KKPRL.
           </p>
-          <!-- <div
+          <div
             class="list-inline social-list-default background-color social-hover-2 mt-2"
           >
             <li class="list-inline-item">
               <a
-                class="twitter"
-                href="#"
+                class="instagram"
+                target="_blank"
+                href="https://instagram.com/ditprl.kkp?igshid=NzZlODBkYWE4Ng=="
               >
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
               </a>
             </li>
             <li class="list-inline-item">
               <a
-                class="youtube"
-                href="#"
+                class="twitter"
+                target="_blank"
+                href="https://x.com/ditprlkkp?s=11&t=4W3N8cNuR0tR5KZYndoY6g"
               >
-                <i class="fab fa-youtube"></i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1em"
+                  viewBox="0 0 512 512"
+                >
+                  <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <path
+                    d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                  />
+                </svg>
               </a>
             </li>
-            <li class="list-inline-item">
+            <!--<li class="list-inline-item">
               <a
                 class="linkedin"
                 href="#"
@@ -57,8 +68,8 @@
               >
                 <i class="fab fa-dribbble"></i>
               </a>
-            </li>
-          </div> -->
+            </li> -->
+          </div>
         </div>
         <div class="col-md-12 col-lg-4 pt-5">
           <h6 class="text-uppercase">Menu</h6>

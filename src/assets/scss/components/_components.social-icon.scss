@@ -1,8 +1,13 @@
 //social list default style
 .social-list-default{
+  display: flex;
+  align-items: center;
+
   li{
     a{
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       -webkit-transition: all 0.3s ease-out;
       -o-transition: all 0.3s ease-out;
@@ -13,7 +18,7 @@
       width: 32px;
       line-height: 32px;
       border-radius: 4px;
-      font-size: 1rem;
+      font-size: 1.3rem;
     }
     &:not(.bg-brand-01):not(.bg-brand-02):not(.bg-brand-03) a {
       color: $color-inverse-01;
@@ -25,7 +30,7 @@
   }
 
   .list-inline-item:not(:last-child){
-    margin-right: .3rem;
+    margin-right: .8rem;
   }
 }
 
@@ -189,7 +194,7 @@
         color: $white !important;
       }
       a.twitter{
-        background: $twitter-color;
+        background: white;
         color: $white !important;
       }
       a.google{
@@ -209,7 +214,7 @@
         color: $white !important;
       }
       a.instagram{
-        background: $instagram-color;
+        background-image: linear-gradient(45deg, #405DE6, #833AB4, #E1306C, #F56040, #FCAF45);
         color: $white !important;
       }
       a.tumblr{
@@ -281,7 +286,7 @@
       color: $white !important;
     }
     a.twitter{
-      background: $twitter-color;
+      background: white;
       color: $white !important;
     }
     a.google{
@@ -301,7 +306,7 @@
       color: $white !important;
     }
     a.instagram{
-      background: $instagram-color;
+      background-image: linear-gradient(45deg, #405DE6, #833AB4, #E1306C, #F56040, #FCAF45);
       color: $white !important;
     }
     a.tumblr{
@@ -370,7 +375,7 @@
       color: $facebook-color !important;
     }
     a.twitter{
-      background: rgba(29, 161, 242, .40);
+      background: white;
       color: $twitter-color !important;
     }
     a.google{

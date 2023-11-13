@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@chenfengyuan/vue-countdown": "^1.1.5",
-    "@fortawesome/vue-fontawesome": "^2.0.10",
+    "@fortawesome/vue-fontawesome": "^3.0.5",
     "animated-number-vue": "^1.0.0",
     "axios": "^1.6.0",
     "core-js": "^3.6.5",

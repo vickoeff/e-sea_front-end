@@ -25,34 +25,35 @@
             </div>
           </div>
         </div>
-        <div class="row justify-content-center">
-          <div v-if="data.length > 0">
-            <div
-              v-for="item in data"
-              class="col-md-6 col-lg-4"
-              v-bind:key="item.imageUrl"
-            >
-              <small-blog-item
-                :id="item.id"
-                :image-url="baseApiUrl + '/company-profile/' + item.imageUrl"
-                :day="item.day"
-                :month="item.month"
-                :title="item.title"
-                :desc="item.desc"
-              />
-            </div>
-            <div
-              v-if="data.length > 3"
-              class="row justify-content-center mt-4"
-            >
-              <div class="col-12 text-center">
-                <router-link
-                  to="announcement"
-                  class="see-more text-white"
-                >
-                  Lihat Lebih Banyak
-                </router-link>
-              </div>
+        <div
+          v-if="data.length > 0"
+          class="row justify-content-center"
+        >
+          <div
+            v-for="item in data"
+            class="col-md-6 col-lg-4"
+            v-bind:key="item.imageUrl"
+          >
+            <small-blog-item
+              :id="item.id"
+              :image-url="baseApiUrl + '/company-profile/' + item.imageUrl"
+              :day="item.day"
+              :month="item.month"
+              :title="item.title"
+              :desc="item.desc"
+            />
+          </div>
+          <div
+            v-if="data.length > 3"
+            class="row justify-content-center mt-4"
+          >
+            <div class="col-12 text-center">
+              <router-link
+                to="announcement"
+                class="see-more text-white"
+              >
+                Lihat Lebih Banyak
+              </router-link>
             </div>
           </div>
         </div>
