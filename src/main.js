@@ -17,7 +17,7 @@ import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 /* Axios */
 import initAxios from './libs/axios';
 
-Vue.use(VueScrollTo);
+Vue.use(VueScrollTo , {offset: -250});
 Vue.use(VueYoutube);
 Vue.use(BackToTop);
 Vue.prototype.$axios = initAxios;

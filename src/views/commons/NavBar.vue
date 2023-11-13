@@ -39,7 +39,10 @@
           class="collapse navbar-collapse h-auto"
           :class="{ show: !collapsed }"
         >
-          <ul class="navbar-nav ml-auto menu align-items-center">
+          <ul
+            class="navbar-nav ml-auto menu align-items-center"
+            @click="mobileNavClicked"
+          >
             <li>
               <router-link to="/">Beranda</router-link>
             </li>
