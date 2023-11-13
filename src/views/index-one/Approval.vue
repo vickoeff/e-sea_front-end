@@ -25,11 +25,6 @@
               />
             </div>
           </div>
-          <!-- <div class="col-sm-5 col-md-5 col-lg-4">
-                        <div class="about-content-right">
-                            <img src="../../assets/img/app-mobile-image-2.png" alt="about us" class="img-fluid" />
-                        </div>
-                  </div> -->
         </div>
       </div>
     </section>
@@ -64,6 +59,17 @@ export default {
 </script>
 
 <style>
+.background-shape-img:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-image: url('../../assets/img/about-bg-shape.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 ol {
   padding-left: 1rem !important;
 }
