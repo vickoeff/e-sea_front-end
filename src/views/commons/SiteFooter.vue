@@ -8,8 +8,15 @@
     <div class="container">
       <div class="row justify-content-between">
         <div class="col-md-12 col-lg-4 mb-4 mb-md-4 mb-sm-4 mb-lg-0">
-          <a href="#" class="navbar-brand mb-2">
-            <img src="../../assets/img/logo-white.png" alt="logo" class="img-fluid" />
+          <a
+            href="#"
+            class="navbar-brand mb-2"
+          >
+            <img
+              src="../../assets/img/logo-white.png"
+              alt="logo"
+              class="img-fluid"
+            />
           </a>
           <br />
           <p>
@@ -26,33 +33,64 @@
             <div class="col-6 col-sm-6 col-md-3 col-lg-3">
               <ul>
                 <li>
-                  <router-link to="/">Beranda</router-link>
+                  <router-link
+                    v-scroll-to="'#'"
+                    to="/"
+                  >
+                    Beranda
+                  </router-link>
                 </li>
                 <li>
-                  <router-link v-scroll-to="'#about'" to="#about"> Tentang </router-link>
+                  <router-link
+                    v-scroll-to="'#about'"
+                    to="/#about"
+                  >
+                    Tentang
+                  </router-link>
                 </li>
                 <li>
-                  <router-link v-scroll-to="'#perizinan'" to="#perizinan">
+                  <router-link
+                    v-scroll-to="'#perizinan'"
+                    to="/#perizinan"
+                  >
                     Perizinan
                   </router-link>
                 </li>
                 <li>
-                  <router-link v-scroll-to="'#faq'" to="faq"> Pelaporan </router-link>
+                  <router-link
+                    v-scroll-to="'#report'"
+                    to="/#report"
+                  >
+                    Pelaporan
+                  </router-link>
                 </li>
               </ul>
             </div>
             <div class="col-6 col-sm-6 col-md-3 col-lg-3">
               <ul>
                 <li>
-                  <router-link v-scroll-to="'#faq'" to="faq"> Pengumuman </router-link>
+                  <router-link
+                    v-scroll-to="'#announcement'"
+                    to="/announcement"
+                  >
+                    Pengumuman
+                  </router-link>
                 </li>
                 <li>
-                  <router-link v-scroll-to="'#gallery'" to="#gallery">
+                  <router-link
+                    v-scroll-to="'#gallery'"
+                    to="/gallery"
+                  >
                     Galeri
                   </router-link>
                 </li>
                 <li>
-                  <router-link v-scroll-to="'#faq'" to="faq"> FAQ </router-link>
+                  <router-link
+                    v-scroll-to="'#faq'"
+                    to="/#faq"
+                  >
+                    FAQ
+                  </router-link>
                 </li>
               </ul>
             </div>
@@ -66,14 +104,14 @@
 
 <script>
 export default {
-  name: "SiteFooter",
+  name: 'SiteFooter',
   props: {
     showSubscribe: {
       type: Boolean,
-      default: false,
-    },
-  },
-};
+      default: false
+    }
+  }
+}
 </script>
 
 <style>
