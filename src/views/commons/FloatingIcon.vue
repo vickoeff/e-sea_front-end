@@ -1,53 +1,60 @@
 <template>
-  <div class="float-icon" @click="popIt">
+  <div class="float-icon">
     <div class="wrapper__list">
-      <div class="social-icon">
-        <a
-          target="_blank"
-          href="https://instagram.com/ditprl.kkp?igshid=NzZlODBkYWE4Ng=="
-          class="color-instagram"
-        >
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
-      <div class="social-icon">
-        <a target="_blank" href="https://wa.me/+6287762250001" class="color-whatsapp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-      </div>
-      <div class="social-icon">
-        <a
-          class="twitter"
-          target="_blank"
-          href="https://x.com/ditprlkkp?s=11&t=4W3N8cNuR0tR5KZYndoY6g"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
-            <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
-            />
-          </svg>
+      <!-- <div class="bg-danger" v-for="item in sosmed" :key="item.id">{{ item.label }}</div> -->
+      <div class="social-icon" v-for="item in sosmed" :key="item.id">
+        <a target="_blank" :href="item.url" class="color-instagram">
+          <img :src="url + '/company-profile/' + item.icon" :alt="item.label" />
+          <!-- <i class="fab fa-instagram"></i> -->
         </a>
       </div>
     </div>
-    <div class="wrapper to-circle">
+    <div class="wrapper to-circle" @click="popIt">
       <a class="trigger">
         <i class="fas fa-phone-alt"></i>
+      </a>
+    </div>
+    <div class="whatsapp">
+      <a target="_blank" :href="whatsApp.url">
+        <!-- <i class="fas fa-phone-alt"></i> -->
+        <img :src="url + `/company-profile/${whatsApp.icon}`" :alt="whatsApp.label" />
       </a>
     </div>
   </div>
 </template>
 
 <script>
+import Axios from "axios";
+import config from "../../config";
 export default {
   name: "FloatingIcon",
   data() {
     return {
       isActive: false,
+      sosmed: [],
+      whatsApp: {},
+      url: config.baseApiUrl,
     };
   },
   methods: {
     popIt() {
       this.isActive = !this.isActive;
+    },
+
+    async getSosmed() {
+      const AxiosResponse = await Axios.get(
+        `${config.baseApiUrl}/company-profile/social-media`
+      );
+
+      const getWahatsapp = AxiosResponse.data.find(
+        (e) => e.label.toLowerCase() == "whatsapp"
+      );
+      const getFloat = AxiosResponse.data.filter(
+        (e) => e.label.toLowerCase() != "whatsapp"
+      );
+
+      this.sosmed = getFloat;
+      this.whatsApp = getWahatsapp;
     },
   },
   watch: {
@@ -64,6 +71,10 @@ export default {
         itemList.classList.remove("wrapper__show");
       }
     },
+  },
+
+  mounted() {
+    this.getSosmed();
   },
 };
 </script>
@@ -83,9 +94,31 @@ export default {
   box-shadow: 2px 1px 7px 0px #3f99f65e;
   position: fixed;
   right: 26px;
-  bottom: 26px;
-  padding: 0 10px;
+  bottom: 90px;
+  width: 49px;
+  height: 49px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+}
+
+.whatsapp {
+  background-color: white;
+  border-radius: 100%;
+  transition: border-radius 0.1s;
+  box-shadow: 2px 1px 7px 0px #3f99f65e;
+  position: fixed;
+  right: 26px;
+  bottom: 25px;
+
+  cursor: pointer;
+}
+.whatsapp > a > img {
+  max-width: 49px;
+  max-height: 49px;
+  min-height: 49px;
+  min-width: 49px;
 }
 .trigger {
   font-size: 1.5rem;
@@ -98,7 +131,7 @@ export default {
 .wrapper__list {
   opacity: 0;
   right: 26px;
-  bottom: 5.2rem;
+  bottom: 160px;
   position: fixed;
   overflow: hidden;
   border-radius: 5px;
@@ -110,12 +143,18 @@ export default {
   height: fit-content;
   opacity: 1;
   background: white;
-  padding: 0 6px;
+  padding: 0 10px;
   transform: translateY(0);
 }
 
 .social-icon {
   paddding: 10px;
+}
+.social-icon > a > img {
+  max-width: 32px;
+  max-height: 32px;
+  min-height: 32px;
+  min-width: 32px;
 }
 
 .social-icon a {
