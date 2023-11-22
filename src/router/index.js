@@ -6,6 +6,8 @@ import AnnouncementPage from '../pages/announcement/AnnouncementPage'
 import AnnouncementDetailPage from '../pages/announcement/AnnouncementDetailPage';
 import Page404 from '../pages/utilities/Page404';
 import GalleryPage from '../pages/GalleryPage';
+import config from '../config';
+import axios from 'axios';
 
 Vue.use(VueRouter);
 
@@ -62,9 +64,20 @@ const router = new VueRouter({
     }
 });
 
-router.beforeEach((to, from, next) => {
-    if (to.meta && to.meta.title)
-        document.title = to.meta.title;
+router.beforeEach(async (to, from, next) => {
+    const {data} = await axios.get(`${config.baseApiUrl}/company-profile/profile/e-sea`);
+
+    if (to.meta && to.meta.title && data)
+        document.title = data.title_web ? data.title_web : to.meta.title;
+
+        
+    if (data.favicon) {
+        const links = document.querySelectorAll("[rel='icon']")
+        links.forEach((link) => {
+            link.setAttribute('href', `${config.baseApiUrl}/company-profile/${data.favicon}`)
+        })
+    }
+
     next();
 });
 
