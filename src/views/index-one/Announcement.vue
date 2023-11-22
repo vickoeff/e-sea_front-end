@@ -88,7 +88,8 @@ export default {
       const normalize = res.data.data.reduce((acc, e) => {
         const eventStart = new Date(e.event_start_at)
         const currentDate = new Date()
-        const isShow = eventStart.getTime() <= currentDate.getTime()
+        const isShow =
+          new Date(e.event_end_at).getTime() >= currentDate.getTime()
         if (isShow) {
           const year = eventStart.getFullYear()
           const month = eventStart.toLocaleString('id-ID', { month: 'short' })
