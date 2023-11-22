@@ -14,14 +14,14 @@
           href="/"
         >
           <img
-            src="../../assets/img/kkp-logo.png"
-            alt="logo"
+            :src="baseApiUrl + '/company-profile/' + logo_1"
+            alt="logo_1"
             width="104px"
             class="img-fluid logo"
           />
           <img
-            src="../../assets/img/logo-white.png"
-            alt="logo"
+            :src="baseApiUrl + '/company-profile/' + logo_2"
+            alt="logo_2"
             width="200px"
             class="ml-4 img-fluid logo"
           />
@@ -100,12 +100,12 @@
               </router-link>
             </li>
             <li>
-              <router-link
-                v-scroll-to="'#faq'"
-                to="#"
+              <a
+                href="https://apps.kkp.go.id"
+                target="_blank"
               >
                 <button class="btn btn-brand-03">Login</button>
-              </router-link>
+              </a>
             </li>
           </ul>
         </div>
@@ -115,6 +115,8 @@
 </template>
 
 <script>
+import config from '../../config'
+
 export default {
   props: {
     coloredLogo: {
@@ -125,7 +127,10 @@ export default {
   data: function () {
     return {
       windowTop: 0,
-      collapsed: true
+      collapsed: true,
+      logo_1: null,
+      logo_2: null,
+      baseApiUrl: config.baseApiUrl
     }
   },
   computed: {
@@ -135,11 +140,20 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.onScroll)
+    this.getData()
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.onScroll)
   },
   methods: {
+    async getData() {
+      const res = await this.$axios.get(`/company-profile/profile/e-sea`)
+
+      if (res.data) {
+        this.logo_1 = res.data.logo_1
+        this.logo_2 = res.data.logo_2
+      }
+    },
     onScroll: function () {
       this.windowTop = window.top.scrollY
     },
