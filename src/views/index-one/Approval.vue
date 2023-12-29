@@ -50,9 +50,10 @@ export default {
   },
   async mounted() {
     const res = await this.$axios.get(`/company-profile/approval`)
+    const data = res.data.find((e) => e.id === 1)
 
-    if (res.data[0]) {
-      this.data = res.data[0].body
+    if (data) {
+      this.data = data.body
     }
   }
 }
@@ -70,10 +71,17 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 }
-ol {
+#perizinan ol {
   padding-left: 1rem !important;
 }
-ol > li {
+#perizinan ol > li {
+  list-style: lower-alpha;
+}
+
+#perizinan ul {
+  padding-left: 1rem !important;
+}
+#perizinan ul > li {
   list-style: lower-alpha;
 }
 </style>

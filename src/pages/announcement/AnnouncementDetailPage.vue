@@ -25,8 +25,11 @@
                       v-for="item in newestList"
                       :key="item.id"
                     >
-                      <div class="wi">
-                        <a :href="'/announcement/' + item.id">
+                      <router-link
+                        class="ann-item"
+                        :to="'/announcement/' + item.id"
+                      >
+                        <div class="wi">
                           <img
                             :src="
                               baseApiUrl + '/company-profile/' + item.imageUrl
@@ -34,16 +37,14 @@
                             alt="recent post"
                             class="img-fluid rounded"
                           />
-                        </a>
-                      </div>
-                      <div class="wb">
-                        <a href="#">
+                        </div>
+                        <div class="wb">
                           {{ item.title }}
-                        </a>
-                        <span class="post-date">
-                          {{ item.month }} {{ item.day }}, {{ item.year }}
-                        </span>
-                      </div>
+                          <span class="post-date">
+                            {{ item.month }} {{ item.day }}, {{ item.year }}
+                          </span>
+                        </div>
+                      </router-link>
                     </li>
                   </ul>
                 </aside>
@@ -113,6 +114,16 @@ export default {
       baseApiUrl: config.baseApiUrl
     }
   },
+  computed: {
+    annId() {
+      return this.$route.params.slug
+    }
+  },
+  watch: {
+    annId() {
+      this.getDetailData()
+    }
+  },
   async mounted() {
     const res = await this.$axios.get(
       `/company-profile/announcement?page=1&perPage=3`
@@ -143,8 +154,13 @@ export default {
       }, [])
       this.newestList = normalize
 
+      await this.getDetailData()
+    }
+  },
+  methods: {
+    async getDetailData() {
       const detail = await this.$axios(
-        `/company-profile/announcement/${this.$route.params.slug}`
+        `/company-profile/announcement/${this.annId}`
       )
       const eventStart = new Date(detail.data.event_start_at)
       const start_year = eventStart.getFullYear()
@@ -166,11 +182,15 @@ export default {
         end_day,
         imageUrl: this.baseApiUrl + '/company-profile/' + detail.data.imageUrl
       }
-      this.crumbs.push({
-        link: '#',
-        name: this.data.title,
-        isActive: true
-      })
+      if (this.crumbs[2]) {
+        this.crumbs[2].name = detail.data.title
+      } else {
+        this.crumbs.push({
+          link: '#',
+          name: detail.data.title,
+          isActive: true
+        })
+      }
     }
   }
 }
@@ -179,5 +199,13 @@ export default {
 <style scoped>
 .post-meta > li:not(:last-child):after {
   content: '-' !important;
+}
+.ann-item {
+  cursor: pointer;
+  padding: 8px;
+  color: #788487 !important;
+}
+.ann-item:hover {
+  box-shadow: 0px 0px 10px #d7d9da;
 }
 </style>

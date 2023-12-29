@@ -1,4 +1,4 @@
-const BASE_API_URL = "http://192.168.1.13:8080";
+const BASE_API_URL = "https://cms-sea.kkp.go.id";
 
 export default {
     baseApiUrl: BASE_API_URL

@@ -100,10 +100,7 @@
               </router-link>
             </li>
             <li>
-              <a
-                href="https://apps.kkp.go.id"
-                target="_blank"
-              >
+              <a href="https://app-sea.kkp.go.id:3030/">
                 <button class="btn btn-brand-03">Login</button>
               </a>
             </li>

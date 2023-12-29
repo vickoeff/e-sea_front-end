@@ -32,11 +32,11 @@
             <p>{{ data.description }}</p>
             <a
               type="submit"
-              class="btn btn-brand-02"
+              class="btn btn-brand-02 font-weight-bold"
               id="btnContactUs"
               :href="data.url"
             >
-              Lapor
+              Unduh Template
             </a>
           </div>
         </div>

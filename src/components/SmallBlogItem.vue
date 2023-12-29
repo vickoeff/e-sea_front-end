@@ -18,9 +18,11 @@
       <h3 class="h5 mb-2 card-title">
         {{ title }}
       </h3>
-      <p class="card-text">
-        {{ desc }}
-      </p>
+      <editor
+        class="card-text"
+        mode="viewer"
+        v-model="sortenDesc"
+      />
       <a
         :href="'/announcement/' + id"
         class="detail-link"
@@ -33,8 +35,11 @@
 </template>
 
 <script>
+import { Editor } from 'vuetify-markdown-editor'
+
 export default {
   name: 'SmallBlogItem',
+  components: { Editor },
   props: {
     id: {
       type: Number,
@@ -64,6 +69,15 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  computed: {
+    sortenDesc() {
+      if (this.desc.length > 100) {
+        return this.desc.slice(0, 100) + '...'
+      }
+
+      return this.desc
+    }
   }
 }
 </script>
@@ -71,5 +85,12 @@ export default {
 <style>
 .single-blog-card {
   min-width: 17rem !important;
+}
+.card-text {
+  padding: 0 !important;
+  max-width: 100ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: wrap;
 }
 </style>
