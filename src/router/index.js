@@ -82,19 +82,19 @@ router.beforeEach(async (to, from, next) => {
 
   if (data.favicon) {
     const links = document.querySelectorAll("[rel='icon']")
-    const metas = document.querySelectorAll("[property='og:image']")
+    // const metas = document.querySelectorAll("[property='og:image']")
     links.forEach((link) => {
       link.setAttribute(
         'href',
         `${config.baseApiUrl}/company-profile/${data.favicon}`
       )
     })
-    metas.forEach((meta) => {
-      meta.setAttribute(
-        'content',
-        `${config.baseApiUrl}/company-profile/${data.favicon}`
-      )
-    })
+    // metas.forEach((meta) => {
+    //   meta.setAttribute(
+    //     'content',
+    //     `${config.baseApiUrl}/company-profile/${data.favicon}`
+    //   )
+    // })
   }
 
   next()
